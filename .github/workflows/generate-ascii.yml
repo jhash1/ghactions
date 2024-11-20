@@ -11,7 +11,7 @@ jobs:
 
             - name: Executing Shell Script
               run: |
-                chmod + ascii-script.sh
+                chmod +x ascii-script.sh
                 ./ascii-script.sh
 
             - name: Checkout Repo files
