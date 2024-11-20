@@ -10,7 +10,7 @@ jobs:
               run: sudo apt-get install cowsay -y
 
             - name: Executy Cowsay cmd
-              run: conway -f dragon "Run for Cover, I am a Dragon...RAWR" >> dragon.txt
+              run: cowsay -f dragon "Run for Cover, I am a Dragon...RAWR" >> dragon.txt
 
             - name: Sleep for 30 seconds
               run: sleep 30
