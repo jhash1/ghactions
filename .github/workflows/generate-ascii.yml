@@ -44,3 +44,22 @@ jobs:
 
         - name: Test file exists
           run: echo Deploying...
+
+
+    slack-notification:
+      if: always()
+      name: Slack Notification
+      needs: [test_job2, build_job1]
+      continue-on-error: true
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_CHANNEL: ghactions
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        #  SLACK_ICON: https://gitlab.com/sidd-harth/solar-system/-/raw/main/images/saturn.png
+          SLACK_MESSAGE: ':hammer_and_wrench: Triggered by ${{github.actor}}'
+          SLACK_TITLE: Information
