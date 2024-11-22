@@ -28,6 +28,7 @@ jobs:
             name: dragon-text-file
             
         - name: Test file exists
+          if: failure()
           run: grep -i "dragon" dragon.txt
         
     deploy_job3:
