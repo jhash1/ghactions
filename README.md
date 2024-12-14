@@ -1,2 +1,2 @@
 # Exploring Actions
-Learn GH Actions in Depth
+- Learn GH Actions in Depth
