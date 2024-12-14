@@ -12,7 +12,7 @@ echo PR Number - $pull_request_number
 giphy_response=$(curl -s "https://api.giphy.com/v1/gifs/random?api_key=$GIPHY_API_KEY&tag=&rating=g")
 echo Giphy Response - $giphy_response
 
-gif_url=$(echo "$giphy_response") | jq --raw-output .data.images.downsized.url)
+gif_url=$(echo "$giphy_response") | jq --raw-output .data.images.downsized.url
 echo GIPHY_URL - $gif_url
 
 comment_response=$(curl -sX POST -H "Authorization: token $GITHUB_TOKEN" \
