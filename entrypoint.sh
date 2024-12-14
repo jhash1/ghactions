@@ -4,7 +4,7 @@
 GITHUB_TOKEN=$1
 GIPHY_API_KEY=$2
 
-=pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 echo PR Number - $pull_request_number
 
 giphy_response=$(curl -s "https://api.giphy.com/v1/gifs/random?api_key=$GIPHY_API_KEY&tag=thank%20you&rating=g")
