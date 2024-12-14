@@ -3,8 +3,6 @@
 GITHUB_TOKEN=$1
 GIPHY_API_KEY=$2
 
-pPKwlT9v3c2gl6QdiO6lfvVc9QUPpPQU
-
 #Get PR Num
 pull_request_number=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
 echo PR Number - $pull_request_number

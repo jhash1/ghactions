@@ -13,7 +13,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
     - name: Post PR Comment
-      uses: ./giphy
+      uses: ./
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         giphy-api-key: ${{ secrets.GIPHY_API_KEY }}
